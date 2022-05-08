@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="commo.css">
+</head>
+
+<body>
+    <div>
+        <form id="form">
+            <h4>Email</h4>
+            <input type="email" placeholder="Enter your email" id="email" />
+
+            <h4>Password</h4>
+            <input type="password" placeholder="Enter password" id="password" />
+            <button>LOG IN</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit", logfun)
+
+    var userdata = JSON.parse(localStorage.getItem("userdata"))
+
+
+    function logfun() {
+        event.preventDefault();
+
+        var logdata = {
+            logemail: form.email.value,
+            logpassword: form.password.value
+        }
+
+
+        
+
+        if (userdata == null) {
+            alert("plaease create account")
+        }
+        else {
+            var flag = false
+
+            userdata.forEach(function (elem) {
+                if (elem.email == logdata.logemail && elem.password == logdata.logpassword) {
+                    flag = true
+                }
+            })
+            if (flag == true) {
+                alert("successfull")
+
+
+            }
+
+
+            else  {
+                alert("wrong password")
+
+            }
+
+        }
+
+
+
+        console.log(userdata)
+
+        localStorage.setItem("logdata", JSON.stringify(logdata))
+
+    }
+</script>

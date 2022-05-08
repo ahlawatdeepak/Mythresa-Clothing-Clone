@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="commo.css">
+
+
+</head>
+
+
+<body>
+    <img id="logo" src="https://sso.masaischool.com/brand_dark.svg" alt="masaischool">
+    <div>
+    <form id="form">
+        
+        <h1>Sign Up</h1>
+       <h4>Full name</h4>
+        <input type="text" placeholder="Enter name" id="name"/>
+        <h4>Email</h4>
+        <input type="email" placeholder="Enter your email" id="email"/>
+        <h4>Number</h4>
+        <input type="number" placeholder="Enter your number" id="number">
+        <h4>Password</h4>
+        <input type="password" placeholder="Enter password" id="password"/>
+        <button>SIGN UP</button>
+    </form>
+</div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",user)
+    
+
+    var userarr=JSON.parse(localStorage.getItem("userdata"))||[]
+    
+    function user(){
+        event.preventDefault();
+
+        var data={
+            username:form.name.value,
+            email:form.email.value,
+            number:form.number.value,
+            password:form.password.value,
+        };
+
+        userarr.push(data)
+    //    console.log(data)
+       
+        localStorage.setItem("userdata",JSON.stringify(userarr))
+        window.location.href="login.html"
+        
+    }
+
+</script>
