@@ -9,9 +9,12 @@ this is the homepage of website
 ![Screenshot (333)](https://user-images.githubusercontent.com/103120032/216750949-defffbcb-5fd0-42ee-829a-7b700e8a2cc4.png)
 
 
-#Techstack:-
+# Techstack:-
+
 HTML
+
 CSS
+
 JAVASCRIPT
 
 # Netlifilink:-
